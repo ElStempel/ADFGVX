@@ -146,6 +146,7 @@ class Okno(QMainWindow):
         print("decrypt")
         
         message = self.messageField.text()
+        message = message.upper()
         keyword = self.keyField.text()
         keyword = keyword.lower()
         
@@ -173,11 +174,17 @@ class Okno(QMainWindow):
     
     def encryptClicked(self):
         self.subtitleText.setText("Szyfruje " + self.messageField.text() + " kluczem " + self.keyField.text())
-        self.messageField.setText(self.encrypt())
+        try:
+            self.messageField.setText(self.encrypt())
+        except:
+            print("cos poszlo nie tak")
     
     def decryptClicked(self):
         self.subtitleText.setText("Deszyfruje " + self.messageField.text() + " kluczem " + self.keyField.text())
-        self.messageField.setText(self.decrypt())
+        try:
+            self.messageField.setText(self.decrypt())
+        except:
+            print("cos poszlo nie tak")
         
     def textSelectClicked(self):
         textFilePath = filedialog.askopenfilename()
