@@ -246,11 +246,14 @@ class Okno(QMainWindow):
         info = QMessageBox()
         info.setWindowTitle("Info")
         info.setStyleSheet("QMessageBox { background-color : rgb(167,167,167)")
-        f = open("/Users/aleksandersteplewski/Desktop/POD/ADFGVX/info.txt", "r", encoding="utf-8")
-        data = f.read()
-        info.setText(data)
-        info.setFont(QFont('Comic Sans',12))
-        info.exec_()
+        try:
+            f = open("/Users/aleksandersteplewski/Desktop/POD/ADFGVX/info.txt", "r", encoding="utf-8")
+            data = f.read()
+            info.setText(data)
+            info.setFont(QFont('Comic Sans',12))
+            info.exec_()
+        except:
+            print("coś się nie wczytało")
         
         
 
