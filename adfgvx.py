@@ -242,7 +242,9 @@ class Okno(QMainWindow):
 
 app = QApplication(sys.argv)
 window = Okno()
-#window.setFixedSize(800,600)
+window.setFixedSize(900,600)
+#window.setMaximumWidth(1000)
+#window.setMaximumHeight(800)
 window.setStyleSheet("background-color: rgb(236,236,236)")
 window.show()
 app.exec_()
