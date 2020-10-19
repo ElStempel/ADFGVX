@@ -119,7 +119,7 @@ class Okno(QMainWindow):
     ######FUNKCJE########
     
     def encrypt(self):
-        print("encrypt")
+        print("\n encrypt")
         print("Alfabet: " + secretAlphabet)
         
         message = self.messageField.text()
@@ -132,8 +132,16 @@ class Okno(QMainWindow):
         for c in keyword:
             if c not in key: key.append(c)
             
+        for c in key:
+            print(c)
+            
+        print("\n\n")
+                
         n = len(key)
         k = sorted(range(n), key = lambda i: key[i])
+        
+        for c in k:
+            print(c)
         
         s = []
         for c in message:
@@ -144,7 +152,7 @@ class Okno(QMainWindow):
         return ''.join(s[j] for i in k for j in range(i, len(s), n))
         
     def decrypt(self):
-        print("decrypt")
+        print("\n decrypt")
         print("Alfabet: " + secretAlphabet)
         
         message = self.messageField.text()
@@ -156,9 +164,17 @@ class Okno(QMainWindow):
         key = []
         for c in keyword:
             if c not in key: key.append(c)
+            
+        for c in key:
+            print(c)
+            
+        print("\n\n")
         
         n = len(key)
         k = sorted(range(n), key=lambda i: key[i])
+        
+        for c in k:
+            print(c)
         
         m = len(message)
         x = [j for i in k for j in range(i, m, n)]
