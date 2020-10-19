@@ -84,6 +84,10 @@ class Okno(QMainWindow):
         saveButton = QPushButton()
         saveButton.setText("Zapisz pole tekstu do pliku")
         saveButton.clicked.connect(self.saveClicked)
+        
+        infoButton = QPushButton()
+        infoButton.setText("Info")
+        infoButton.clicked.connect(self.infoClicked)
 
         selectLayout = QHBoxLayout()
         selectLayout.addWidget(textSelectButton)
@@ -93,6 +97,7 @@ class Okno(QMainWindow):
         
         saveLayout = QHBoxLayout()
         saveLayout.addWidget(saveButton)
+        saveLayout.addWidget(infoButton)
         saveLayoutW = QWidget()
         saveLayoutW = QWidget()
         saveLayoutW.setLayout(saveLayout)
@@ -235,6 +240,18 @@ class Okno(QMainWindow):
             f.close
         except:
             print("zamknieto")
+            
+    def infoClicked(self):
+        self.subtitleText.setText("Otwarto informacje")
+        info = QMessageBox()
+        info.setWindowTitle("Info")
+        info.setStyleSheet("QMessageBox { background-color : rgb(167,167,167)")
+        f = open("/Users/aleksandersteplewski/Desktop/POD/ADFGVX/info.txt", "r", encoding="utf-8")
+        data = f.read()
+        info.setText(data)
+        info.setFont(QFont('Comic Sans',12))
+        info.exec_()
+        
         
 
 
@@ -242,9 +259,9 @@ class Okno(QMainWindow):
 
 app = QApplication(sys.argv)
 window = Okno()
-window.setFixedSize(900,600)
+window.setFixedSize(900,500)
 #window.setMaximumWidth(1000)
 #window.setMaximumHeight(800)
-window.setStyleSheet("background-color: rgb(236,236,236)")
+window.setStyleSheet("background-color: rgb(167,167,167)")
 window.show()
 app.exec_()

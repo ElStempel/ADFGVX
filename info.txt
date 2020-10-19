@@ -1,0 +1,9 @@
+ADFGVX - prosty szyfr podstawieniowy, używany przez wojska niemieckie podczas pierwszej wojny światowej.
+
+Jego działanie polega na zmodyfikowanej szachownicy Polibiusza. W wyniku szyfrowania tekstu otrzymujemy szyfrogram zawierający litery: A, D, F, G, V, X.
+
+Na początku wypełniamy szachownicę Polibiusza o wymiarach 6x6 alfabetem o zmienionej kolejności liter (znany tylko nadawcy i odbiorcy). Używając jej, zmieniamy litery tekstu w pary liter (współrzędne na tabeli).
+
+Następnie wybieramy tajne słowo klucz (znane tylko nadawcy i odbiorcy), usuwamy powtarzające się znaki i wypisujemy pod nim w wierszach szyfrogram. Na końcu przestawiamy kolumny by znalazły się alfabetycznie i czytamy kod kolumnami.
+
+Odszyfrowanie jest wykonaniem tych samych czynności w odwrotnej kolejności.
