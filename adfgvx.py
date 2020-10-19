@@ -36,7 +36,7 @@ class Okno(QMainWindow):
         self.subtitleText.setFont(QFont('Arial',20))
         
         self.opisText = QLabel()
-        self.opisText.setText("Aleksander Stęplewski 140784 \n Działa na literach i cyfrach, bez znaków polskich ani specjalnych. \n Spacje zostają usuwane przy szyfrowaniu. \n Przyjmuje tylko pliki .txt")
+        self.opisText.setText("Aleksander Stęplewski 140784 \n Działa na literach i cyfrach, bez znaków polskich ani specjalnych. \n Znaki specjalne zostają usuwane przy szyfrowaniu.\n Zamienia na małe litery. \n Przyjmuje tylko pliki .txt")
         self.opisText.setAlignment(Qt.AlignCenter)
         self.opisText.setFont(QFont('Arial',15))
         
@@ -120,6 +120,7 @@ class Okno(QMainWindow):
     
     def encrypt(self):
         print("encrypt")
+        print("Alfabet: " + secretAlphabet)
         
         message = self.messageField.text()
         message = message.lower()
@@ -144,6 +145,7 @@ class Okno(QMainWindow):
         
     def decrypt(self):
         print("decrypt")
+        print("Alfabet: " + secretAlphabet)
         
         message = self.messageField.text()
         message = message.upper()
